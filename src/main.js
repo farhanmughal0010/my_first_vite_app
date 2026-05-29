@@ -3,7 +3,7 @@ import './style.css'
 document.querySelector('#app').innerHTML = `
   <div class="main-container">
     <header>
-      <h1>Farhan Digital Services</h1>
+      <h1>Farhan Digital Services .</h1>
       <p>Hum aapke business ko internet par behtareen tareeqe se advertise karte hain.</p>
     </header>
 
