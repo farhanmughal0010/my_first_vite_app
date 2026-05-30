@@ -5,7 +5,7 @@ document.querySelector('#app').innerHTML = `
   <div>
     <nav class="navbar">
       <div class="nav-container">
-        <a href="#" class="logo">Farhan<span>Digital</span></a>
+        <a href="#work"> Our Work</a> class="logo">Farhan<span>Digital</span></a>
         <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#features">Why Us</a>
@@ -69,7 +69,46 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
-    <section class="cta-section" id="contact">
+    <section class="cta-section" <section class="portfolio-section" id="work">
+      <h2 class="section-title">Hamara Shandaar Kaam (Our Work)</h2>
+      <p class="section-subtitle">Kuch behtareen projects jo hum ne hal hi mein mukammal kiye hain.</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="p-image-box">
+            <span class="p-badge">E-Commerce</span>
+            <div class="p-mockup">🛒</div>
+          </div>
+          <div class="p-info">
+            <h4>Premium Shopify Store</h4>
+            <p>International markets ke liye aik mukammal aur responsive Shopify drop-shipping store design.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="p-image-box">
+            <span class="p-badge">Web App</span>
+            <div class="p-mockup">🎯</div>
+          </div>
+          <div class="p-info">
+            <h4>Digit 3 Lottery App</h4>
+            <p>Firebase integration aur custom hosting ke sath aik fast aur secure modern web application.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="p-image-box">
+            <span class="p-badge">Marketing</span>
+            <div class="p-mockup">📊</div>
+          </div>
+          <div class="p-info">
+            <h4>Social Media Campaign</h4>
+            <p>USA aur Europe ki targeted audiences ke liye high-converting digital advertising setups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+   id="contact">
       <div class="cta-container">
         <h2>Kiya Aap Apne Business Ko Grow Karna Chahte Hain?</h2>
         <p>Apna naya project shuru karwane ya mofat mashwaray ke liye abhi click karein.</p>
