@@ -1,5 +1,8 @@
-
 /* Base Styling & Fonts */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #0b0f19;
@@ -14,7 +17,7 @@ body {
 
 /* Navbar Style */
 .navbar {
-  background: rgba(11, 15, 25, 0.8);
+  background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
@@ -41,7 +44,7 @@ body {
 }
 
 .logo span {
-  color: #3b82f6; /* Modern Blue Color */
+  color: #3b82f6;
 }
 
 .nav-links a {
@@ -71,12 +74,12 @@ body {
 
 /* Hero Section */
 .hero-section {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 140px 20px 60px 20px;
-  background: radial-gradient(circle at top, #1e2640 0%, #0b0f19 70%);
+  padding: 150px 20px 60px 20px;
+  background: radial-gradient(circle at top, #1e2640 0%, #0b0f19 75%);
 }
 
 /* Premium Main Card */
@@ -98,8 +101,8 @@ body {
   margin-top: 0;
   margin-bottom: 15px;
   display: inline-block;
-  background: linear-gradient(to right, #ffffff, #9ca3af);
-  -webkit-background-clip: text; 
+  background: linear-gradient(to right, #ffffff, #a3a3a3);
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -118,7 +121,6 @@ body {
   border-radius: 12px;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.04);
-  margin-bottom: 30px;
 }
 
 .services-box h3 {
@@ -166,11 +168,81 @@ body {
   line-height: 1.4;
 }
 
-/* CTA & WhatsApp Button */
-.cta-section p {
+/* Why Choose Us Section */
+.features-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px 20px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.f-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.feature-item p {
+  margin: 0;
   font-size: 0.9rem;
   color: #9ca3af;
-  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* CTA & WhatsApp Section */
+.cta-section {
+  background: linear-gradient(180deg, #0b0f19 0%, #111827 100%);
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-bottom: 25px;
 }
 
 .whatsapp-btn {
@@ -182,7 +254,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: 8px;
   font-size: 1rem;
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
@@ -197,9 +269,16 @@ body {
 /* Footer */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
   background: #070a10;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.85rem;
   color: #6b7280;
+}
+
+/* Responsive Fix for Mobile Navbar Links */
+@media (max-width: 480px) {
+  .nav-links a:not(.nav-btn) {
+    display: none; /* Mobile par clean look rakhne ke liye chote links hide kiye hain */
+  }
 }
