@@ -16,7 +16,7 @@ document.querySelector('#app').innerHTML = `
 
     <section class="hero-section" id="services">
       <div class="hero-card">
-        <h1>Farhan Digital Services</h1>
+        <h1>We Provide <span id="typing-text"><span></h1>
         <p class="subtitle">Hum aapke business ko digital duniya mein aik brand banatay hain. Aaj hi apni online pehchan qaim karein.</p>
         
         <div class="services-box">
@@ -73,7 +73,7 @@ document.querySelector('#app').innerHTML = `
       <div class="cta-container">
         <h2>Kiya Aap Apne Business Ko Grow Karna Chahte Hain?</h2>
         <p>Apna naya project shuru karwane ya mofat mashwaray ke liye abhi click karein.</p>
-        <a href="https://wa.me/92XXXXXXXXXX?text=Hi%20Farhan,%20I%20want%20to%20discuss%20a%20project." target="_blank" class="whatsapp-btn">
+        <a href="https://wa.me/971567518514?text=Hi%20Farhan,%20I%20want%20to%20discuss%20a%20project." target="_blank" class="whatsapp-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.558 7.93-7.93a7.86 7.86 0 0 0-2.33-5.645ZM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592Zm3.69-4.936c-.202-.101-1.202-.593-1.387-.66-.185-.066-.32-.1-.454.1-.134.2-.522.66-.64.794-.118.134-.237.151-.439.05-.202-.101-.85-.314-1.622-1.003-.6-.535-1.005-1.199-1.124-1.402-.119-.202-.013-.311.088-.412.09-.09.202-.236.303-.353.101-.118.134-.2.202-.336.067-.134.034-.252-.017-.353-.05-.101-.454-1.093-.622-1.498-.164-.395-.325-.34-.455-.347-.117-.006-.252-.007-.389-.007-.137 0-.361.051-.55.257-.189.206-.722.706-.722 1.72 0 1.014.738 1.993.84 2.13.101.137 1.451 2.215 3.515 3.102.491.211.874.337 1.173.433.494.157.943.135 1.299.082.397-.059 1.202-.491 1.371-.964.169-.472.169-.877.118-.962-.05-.085-.185-.135-.388-.236Z"/>
           </svg>
@@ -87,3 +87,38 @@ document.querySelector('#app').innerHTML = `
     </footer>
   </div>
 `
+// Dynamic Typing Effect Logic
+const words = ["Web Development", "Social Media Ads", "Business Growth"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const erasingSpeed = 50;
+const delayBetweenWords = 2000;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+  const typingElement = document.getElementById("typing-text");
+  
+  if (!typingElement) return;
+
+  if (isDeleting) {
+    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    setTimeout(() => isDeleting = true, delayBetweenWords);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+
+  setTimeout(typeEffect, isDeleting ? erasingSpeed : typingSpeed);
+}
+
+// Effect ko shuru karne ke liye function call
+setTimeout(typeEffect, 500);

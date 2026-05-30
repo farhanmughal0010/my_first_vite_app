@@ -281,4 +281,18 @@ body {
   .nav-links a:not(.nav-btn) {
     display: none; /* Mobile par clean look rakhne ke liye chote links hide kiye hain */
   }
+/* Typing Text Styling & Cursor Blink */
+#typing-text {
+  color: #3b82f6;
+  border-right: 3px solid #3b82f6;
+  padding-right: 5px;
+  animation: blink 0.75s step-end infinite;
+  white-space: nowrap;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #3b82f6; }
+}
+
 }
