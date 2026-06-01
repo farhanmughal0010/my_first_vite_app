@@ -277,7 +277,11 @@ body {
 }
 
 /* Responsive Fix for Mobile Navbar Links */
-@media (max-width: 480px) {
+@media (max-width: 480px) 
+
+
+
+{
   .nav-links a:not(.nav-btn) {
     display: none; /* Mobile par clean look rakhne ke liye chote links hide kiye hain */
   }
@@ -317,12 +321,26 @@ body {
 }
 
 .portfolio-item {
-  background: rgba(17, 24, 39, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 14px;
+  .portfolio-item {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Soft Premium Border & Shadows */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   overflow: hidden;
   text-align: left;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition: all 0.4s ease;
+}
+
+/* Jab mouse card par aaye to halkan sa neon glow aaye */
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15); /* Blue soft glow */
+}
 }
 
 .portfolio-item:hover {
@@ -361,10 +379,37 @@ body {
   transition: transform 0.3s;
 }
 
+/* --- CSS KE BILKUL AAKHIR MEIN YEH PASTE KAREIN --- */
+
+.hero-section h1 {
+  background: linear-gradient(135deg, #ffffff 30%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+#typing-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-right: 3px solid #60a5fa !important;
+}
+
 .portfolio-item:hover .p-mockup {
   transform: scale(1.15);
 }
 
+
+
+#typing-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-right: 3px solid #60a5fa !important; /* Cursor ka color bhi match kar diya */
+}
 .p-info {
   padding: 25px;
 }
